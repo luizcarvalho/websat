@@ -1,0 +1,27 @@
+<h1>Usuários - <%=h labels('filings') %></h1>
+
+<%= render :partial => "search" %>
+
+<table>
+  <tr>
+    <th>Login</th>
+    <th>E-mail</th>
+    <th colspan="4">Controle</th>
+  </tr>
+  <%- @usuarios.each do |usuario|%>
+    <tr bgcolor=<%=h line_color(usuario.active) %>>
+      <td><%=h usuario.login %></td>
+      <td><%=h usuario.email %></td>
+    
+      <td><%=link_to labels('show'), object_url(usuario) %></td>
+      <td><%=link_to labels('edit'), edit_object_url(usuario) %></td>
+      <td><%=link_to labels('emails'), ti_usuario_mailboxes_url(usuario) %></td>
+      <td><%=link_to labels('destroy'), object_url(usuario), :confirm => labels('confirm_destroy'), :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= will_paginate @collection, options = { :prev_label => "← #{labels('previous')}", :next_label => "#{labels('next')} →"} %> <br />
+
+<%= link_to labels('new'), new_object_url %>
+<%= (link_to labels('back'), [:ti,parent_object]) if parent? %>

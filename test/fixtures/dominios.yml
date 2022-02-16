@@ -1,0 +1,20 @@
+one:
+  id: 1
+  domain: MyString
+  description: MyText
+  maxaliases: 1
+  maxmailboxes: 1
+  maxquota: 1
+  transport: MyString
+  backupmx: false
+  active: false
+two:
+  id: 2
+  domain: MyString
+  description: MyText
+  maxaliases: 1
+  maxmailboxes: 1
+  maxquota: 1
+  transport: MyString
+  backupmx: false
+  active: false

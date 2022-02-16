@@ -1,0 +1,29 @@
+
+  <table>
+    <tr>
+      <th>Domain</th>
+      <th>Description</th>
+      <th>Maxaliases</th>
+      <th>Maxmailboxes</th>
+      <th>Maxquota</th>
+      <th>Transport</th>
+      <th>Backupmx</th>
+      <th>Active</th>
+    </tr>
+
+      <tr>
+        <td>redesat-to.com.br</td>
+        <td>Dominio geral da Redesat</td>
+        <td>70</td>
+        <td>200</td>
+        <td>1024</td>
+        <td>maildrop</td>
+        <td>false</td>
+        <td>true</td>
+    
+        <td><a href="http://localhost:3000/ti/dominios/1">Show</a></td>
+        <td><a href="http://localhost:3000/ti/dominios/1/edit">Edit</a></td>
+        <td><a href="http://localhost:3000/ti/dominios/1" onclick="if (confirm('Are you sure?')) { var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;var m = document.createElement('input'); m.setAttribute('type', 'hidden'); m.setAttribute('name', '_method'); m.setAttribute('value', 'delete'); f.appendChild(m);var s = document.createElement('input'); s.setAttribute('type', 'hidden'); s.setAttribute('name', 'authenticity_token'); s.setAttribute('value', '10f1124b3e1560fae46d8efe0b407dc93d27534c'); f.appendChild(s);f.submit(); };return false;">Destroy</a></td>
+      </tr>
+    
+  </table>

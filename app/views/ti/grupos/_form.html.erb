@@ -1,0 +1,21 @@
+<p>
+  <label for="grupo_nome">Nome:</label><br/>
+  <%= f.text_field :nome %>
+</p>
+<p>
+  <label for="grupo_descricao">Descrição:</label><br/>
+  <%= f.text_area :descricao %>
+</p>
+
+<p>
+  <b>Permissões:</b><br/>    
+  <div class="perm">
+    <% @permissoes.each do |permissao| %>
+      <%= check_box_tag "permissoes[]", permissao.id, @grupo.permissoes.include?(permissao) %> <%= permissao.nome %> <br />
+    <% end %>
+  </div>    
+</p>
+
+<p>
+  <%=submit_tag button_name%>
+</p>

@@ -1,0 +1,2 @@
+module Ti::AliasesHelper
+end

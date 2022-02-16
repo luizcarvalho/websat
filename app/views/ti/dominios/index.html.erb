@@ -1,0 +1,23 @@
+<h1>Domínios - <%=h labels('filings') %></h1>
+
+<table>
+  <tr>
+    <th>Domínio</th>
+    <th>Descrição</th>
+    <th colspan="3">Controle</th>
+  </tr>
+  <%- @dominios.each do |dominio|%>
+    <tr bgcolor=<%=h line_color(dominio.active) %>>
+      <td><%=h dominio.domain %></td>
+      <td><%=h dominio.description %></td>
+    
+      <td><%=link_to labels('show'), object_url(dominio) %></td>
+      <td><%=link_to labels('edit'), edit_object_url(dominio) %></td>
+      <td><%=link_to labels('destroy'), object_url(dominio), :confirm => labels('confirm_destroy'), :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= will_paginate @collection, options = { :prev_label => "← #{labels('previous')}", :next_label => "#{labels('next')} →"} %> <br />
+
+<%= link_to labels('new'), new_object_url %>

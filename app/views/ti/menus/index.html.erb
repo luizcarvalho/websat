@@ -1,0 +1,41 @@
+<h1>Menus - <%=h labels('filings') %></h1>
+
+<table>
+  <tr>
+    <th>Label</th>
+    <th>Url</th>
+    <th>Pai</th>
+    <th>Precedência</th>
+  </tr>
+  <%  #Lista tdos os filhos agrupados por Pais em ordem de precedencia!  %>
+  <%- @collection.find_all{|m| m.pai.nil? }.each do |pai|%>
+    <tr class="pai">
+      <td><%=h pai.label %></td>
+      <td><%=h pai.url %></td>
+      <td></td>
+      <td><%=h pai.ordem %></td>
+      <td><%=link_to labels('show'), object_url(pai) %></td>
+      <td><%=link_to labels('edit'), edit_object_url(pai) %></td>
+      <td><%=link_to labels('destroy'), object_url(pai), :confirm => labels('confirm_destroy'), :method => :delete %></td>
+      
+      
+      <%pai.menu_filhos.each do |filho|%>
+      <tr class="filho">
+      <td><%=h filho.label %></td>
+      <td><%=h filho.url %></td>
+      <td><%=h pai.label %></td>
+      <td><%=h filho.ordem %></td>
+      
+      <td><%=link_to labels('show'), object_url(filho) %></td>
+      <td><%=link_to labels('edit'), edit_object_url(filho) %></td>
+      <td><%=link_to labels('destroy'), object_url(filho), :confirm => labels('confirm_destroy'), :method => :delete %></td>
+     </tr>
+   <%end%>      
+
+</tr>
+  <% end %>
+</table>
+
+<%= will_paginate @collection, options = { :prev_label => "← #{labels('previous')}", :next_label => "#{labels('next')} →"} %> <br />
+
+<%= link_to labels('new'), new_object_url %>

@@ -1,0 +1,1649 @@
+
+
+Processing UsuariosController#update (for 127.0.0.1 at 2008-06-16 12:54:16) [PUT]
+  Session ID: BAh7CToMY3NyZl9pZCIlMGU5ZTI3ZjA1ODdiMmExZDUxYTkxOWViMzg4YTAz%0ANjI6D3VzdWFyaW9faWRpBiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6%0ARmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoOcmV0dXJuX3RvMA%3D%3D--9e423d742394db2b59c0edeb6438825f14995e8d
+  Parameters: {"commit"=>"Atualizar", "grupos"=>["3", "2"], "authenticity_token"=>"0b30967945bf1b2848036164fc013a5477c1035d", "_method"=>"put", "action"=>"update", "id"=>"198", "controller"=>"ti/usuarios", "usuario"=>{"password_confirmation"=>"", "password"=>"", "email"=>"gedilsonps@redesat-to.com.br", "active"=>"true"}}
+  [4;36;1mSQL (0.000000)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'usuarios'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mUsuario Load (0.000000)[0m   [0mSELECT * FROM usuarios WHERE (usuarios."id" = 1) LIMIT 1[0m
+  [4;36;1mGrupo Load (0.000000)[0m   [0;1mSELECT grupos.* FROM grupos INNER JOIN grupo_usuarios ON grupos.id = grupo_usuarios.grupo_id WHERE ((grupo_usuarios.usuario_id = 1)) [0m
+  [4;35;1mSQL (0.015000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'grupos'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mPermissao Load (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 3)) [0m
+  [4;35;1mSQL (0.016000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'permissoes'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mPermissao Load (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 2)) [0m
+  [4;35;1mPermissao Load (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 1)) [0m
+  [4;36;1mPermissao Load (0.016000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 4)) [0m
+  [4;35;1mGrupo Load (0.000000)[0m   [0mSELECT * FROM grupos [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 3)) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 2)) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 1)) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 4)) [0m
+  [4;36;1mUsuario Load (0.000000)[0m   [0;1mSELECT * FROM usuarios WHERE (usuarios."id" = 198) [0m
+WARNING: Can't mass-assign these protected attributes: active
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mUsuario Load (0.000000)[0m   [0;1mSELECT * FROM usuarios WHERE (LOWER(usuarios.login) = E'gedilsonps' AND usuarios.id <> 198) LIMIT 1[0m
+  [4;35;1mUsuario Load (0.016000)[0m   [0mSELECT * FROM usuarios WHERE (LOWER(usuarios.email) = E'gedilsonps@redesat-to.com.br' AND usuarios.id <> 198) LIMIT 1[0m
+  [4;36;1mUsuario Update (0.000000)[0m   [0;1mUPDATE usuarios SET "created_at" = '2008-06-08 03:35:37.257782', "nome" = E'Gedilson Pessoa da Silva', "email" = E'gedilsonps@redesat-to.com.br', "remember_token" = NULL, "active" = 't', "login" = E'gedilsonps', "remember_token_expires_at" = NULL, "crypted_password" = E'$1$EiwjdVNz$kHE89.WbJk5eHn07LNMvK0', "updated_at" = '2008-06-16 12:54:17.187000', "salt" = NULL WHERE "id" = 198[0m
+Expired fragment: menu_usuario_198 (0.00000)
+  [4;35;1mSQL (0.016000)[0m   [0mCOMMIT[0m
+  [4;36;1mGrupoUsuario Load (0.000000)[0m   [0;1mSELECT * FROM grupo_usuarios WHERE (grupo_usuarios.usuario_id = 198) [0m
+  [4;35;1mSQL (0.000000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'grupo_usuarios'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+Redirected to http://localhost:3000/ti/usuarios/198
+Completed in 0.34400 (2 reqs/sec) | DB: 0.18700 (54%) | 302 Found [http://localhost/ti/usuarios/198]
+
+
+Processing UsuariosController#show (for 127.0.0.1 at 2008-06-16 12:54:17) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMGU5ZTI3ZjA1ODdiMmExZDUxYTkxOWViMzg4YTAz%0ANjI6D3VzdWFyaW9faWRpBjoOcmV0dXJuX3RvMCIKZmxhc2hJQzonQWN0aW9u%0AQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsGOgtub3RpY2UiJVJlZ2lz%0AdHJvIGF0dWFsaXphZG8gY29tIHN1Y2Vzc28hBjoKQHVzZWR7BjsJVA%3D%3D--b2a75f5eced340b6b79356f11f69550fc906656a
+  Parameters: {"action"=>"show", "id"=>"198", "controller"=>"ti/usuarios"}
+  [4;36;1mSQL (0.031000)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'usuarios'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mUsuario Load (0.016000)[0m   [0mSELECT * FROM usuarios WHERE (usuarios."id" = 1) LIMIT 1[0m
+  [4;36;1mGrupo Load (0.000000)[0m   [0;1mSELECT grupos.* FROM grupos INNER JOIN grupo_usuarios ON grupos.id = grupo_usuarios.grupo_id WHERE ((grupo_usuarios.usuario_id = 1)) [0m
+  [4;35;1mSQL (0.015000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'grupos'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mPermissao Load (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 3)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'permissoes'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mPermissao Load (0.015000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 2)) [0m
+  [4;35;1mPermissao Load (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 1)) [0m
+  [4;36;1mPermissao Load (0.016000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 4)) [0m
+  [4;35;1mGrupo Load (0.015000)[0m   [0mSELECT * FROM grupos [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 3)) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 2)) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 1)) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 4)) [0m
+  [4;36;1mUsuario Load (0.000000)[0m   [0;1mSELECT * FROM usuarios WHERE (usuarios."id" = 198) [0m
+Rendering template within layouts/application
+Rendering ti/usuarios/show
+  [4;35;1mGrupo Load (0.000000)[0m   [0mSELECT grupos.* FROM grupos INNER JOIN grupo_usuarios ON grupos.id = grupo_usuarios.grupo_id WHERE ((grupo_usuarios.usuario_id = 198)) [0m
+Fragment read: menu_usuario_1 (0.01500)
+Completed in 0.31200 (3 reqs/sec) | Rendering: 0.04700 (15%) | DB: 0.10800 (34%) | 200 OK [http://localhost/ti/usuarios/198]
+
+
+Processing JavascriptsController#dragdrop (for 127.0.0.1 at 2008-06-16 12:54:19) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMGU5ZTI3ZjA1ODdiMmExZDUxYTkxOWViMzg4YTAz%0ANjI6D3VzdWFyaW9faWRpBiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6%0ARmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoOcmV0dXJuX3RvMA%3D%3D--9e423d742394db2b59c0edeb6438825f14995e8d
+  Parameters: {"format"=>"js", "action"=>"dragdrop", "controller"=>"javascripts"}
+  [4;36;1mSQL (0.031000)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'usuarios'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mUsuario Load (0.016000)[0m   [0mSELECT * FROM usuarios WHERE (usuarios."id" = 1) LIMIT 1[0m
+  [4;36;1mGrupo Load (0.000000)[0m   [0;1mSELECT grupos.* FROM grupos INNER JOIN grupo_usuarios ON grupos.id = grupo_usuarios.grupo_id WHERE ((grupo_usuarios.usuario_id = 1)) [0m
+  [4;35;1mSQL (0.016000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'grupos'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mPermissao Load (0.015000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 3)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'permissoes'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mPermissao Load (0.016000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 2)) [0m
+  [4;35;1mPermissao Load (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 1)) [0m
+  [4;36;1mPermissao Load (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 4)) [0m
+
+
+ActionController::UnknownAction (No action responded to dragdrop):
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing JavascriptsController#controls (for 127.0.0.1 at 2008-06-16 12:54:20) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMGU5ZTI3ZjA1ODdiMmExZDUxYTkxOWViMzg4YTAz%0ANjI6D3VzdWFyaW9faWRpBjoOcmV0dXJuX3RvMCIKZmxhc2hJQzonQWN0aW9u%0AQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--23726c9030d388050ded485ad8a0b2cdee5fed59
+  Parameters: {"format"=>"js", "action"=>"controls", "controller"=>"javascripts"}
+  [4;35;1mSQL (0.016000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'usuarios'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mUsuario Load (0.000000)[0m   [0;1mSELECT * FROM usuarios WHERE (usuarios."id" = 1) LIMIT 1[0m
+  [4;35;1mGrupo Load (0.015000)[0m   [0mSELECT grupos.* FROM grupos INNER JOIN grupo_usuarios ON grupos.id = grupo_usuarios.grupo_id WHERE ((grupo_usuarios.usuario_id = 1)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'grupos'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mPermissao Load (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 3)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'permissoes'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mPermissao Load (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 2)) [0m
+  [4;36;1mPermissao Load (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 1)) [0m
+  [4;35;1mPermissao Load (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 4)) [0m
+
+
+ActionController::UnknownAction (No action responded to controls):
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing UsuariosController#edit (for 127.0.0.1 at 2008-06-16 12:54:23) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMGU5ZTI3ZjA1ODdiMmExZDUxYTkxOWViMzg4YTAz%0ANjI6D3VzdWFyaW9faWRpBiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6%0ARmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoOcmV0dXJuX3RvMA%3D%3D--9e423d742394db2b59c0edeb6438825f14995e8d
+  Parameters: {"action"=>"edit", "id"=>"198", "controller"=>"ti/usuarios"}
+  [4;36;1mSQL (0.000000)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'usuarios'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mUsuario Load (0.016000)[0m   [0mSELECT * FROM usuarios WHERE (usuarios."id" = 1) LIMIT 1[0m
+  [4;36;1mGrupo Load (0.016000)[0m   [0;1mSELECT grupos.* FROM grupos INNER JOIN grupo_usuarios ON grupos.id = grupo_usuarios.grupo_id WHERE ((grupo_usuarios.usuario_id = 1)) [0m
+  [4;35;1mSQL (0.016000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'grupos'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mPermissao Load (0.016000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 3)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'permissoes'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mPermissao Load (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 2)) [0m
+  [4;35;1mPermissao Load (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 1)) [0m
+  [4;36;1mPermissao Load (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 4)) [0m
+  [4;35;1mGrupo Load (0.000000)[0m   [0mSELECT * FROM grupos [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 3)) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 2)) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 1)) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 4)) [0m
+  [4;36;1mUsuario Load (0.000000)[0m   [0;1mSELECT * FROM usuarios WHERE (usuarios."id" = 198) [0m
+Rendering template within layouts/application
+Rendering ti/usuarios/edit
+  [4;35;1mGrupo Load (0.000000)[0m   [0mSELECT grupos.* FROM grupos INNER JOIN grupo_usuarios ON grupos.id = grupo_usuarios.grupo_id WHERE ((grupo_usuarios.usuario_id = 198)) [0m
+Rendered ti/usuarios/_form (0.01600)
+Fragment read: menu_usuario_1 (0.00000)
+Completed in 0.29700 (3 reqs/sec) | Rendering: 0.03200 (10%) | DB: 0.18900 (63%) | 200 OK [http://localhost/ti/usuarios/198/edit]
+
+
+Processing JavascriptsController#dragdrop (for 127.0.0.1 at 2008-06-16 12:54:25) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMGU5ZTI3ZjA1ODdiMmExZDUxYTkxOWViMzg4YTAz%0ANjI6D3VzdWFyaW9faWRpBjoOcmV0dXJuX3RvMCIKZmxhc2hJQzonQWN0aW9u%0AQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--23726c9030d388050ded485ad8a0b2cdee5fed59
+  Parameters: {"format"=>"js", "action"=>"dragdrop", "controller"=>"javascripts"}
+  [4;36;1mSQL (0.000000)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'usuarios'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mUsuario Load (0.000000)[0m   [0mSELECT * FROM usuarios WHERE (usuarios."id" = 1) LIMIT 1[0m
+  [4;36;1mGrupo Load (0.016000)[0m   [0;1mSELECT grupos.* FROM grupos INNER JOIN grupo_usuarios ON grupos.id = grupo_usuarios.grupo_id WHERE ((grupo_usuarios.usuario_id = 1)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'grupos'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mPermissao Load (0.016000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 3)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'permissoes'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mPermissao Load (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 2)) [0m
+  [4;35;1mPermissao Load (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 1)) [0m
+  [4;36;1mPermissao Load (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 4)) [0m
+
+
+ActionController::UnknownAction (No action responded to dragdrop):
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing JavascriptsController#controls (for 127.0.0.1 at 2008-06-16 12:54:27) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMGU5ZTI3ZjA1ODdiMmExZDUxYTkxOWViMzg4YTAz%0ANjI6D3VzdWFyaW9faWRpBiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6%0ARmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoOcmV0dXJuX3RvMA%3D%3D--9e423d742394db2b59c0edeb6438825f14995e8d
+  Parameters: {"format"=>"js", "action"=>"controls", "controller"=>"javascripts"}
+  [4;35;1mSQL (0.000000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'usuarios'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mUsuario Load (0.000000)[0m   [0;1mSELECT * FROM usuarios WHERE (usuarios."id" = 1) LIMIT 1[0m
+  [4;35;1mGrupo Load (0.000000)[0m   [0mSELECT grupos.* FROM grupos INNER JOIN grupo_usuarios ON grupos.id = grupo_usuarios.grupo_id WHERE ((grupo_usuarios.usuario_id = 1)) [0m
+  [4;36;1mSQL (0.016000)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'grupos'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mPermissao Load (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 3)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'permissoes'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mPermissao Load (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 2)) [0m
+  [4;36;1mPermissao Load (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 1)) [0m
+  [4;35;1mPermissao Load (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 4)) [0m
+
+
+ActionController::UnknownAction (No action responded to controls):
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing UsuariosController#update (for 127.0.0.1 at 2008-06-16 12:54:48) [PUT]
+  Session ID: BAh7CToMY3NyZl9pZCIlMGU5ZTI3ZjA1ODdiMmExZDUxYTkxOWViMzg4YTAz%0ANjI6D3VzdWFyaW9faWRpBjoOcmV0dXJuX3RvMCIKZmxhc2hJQzonQWN0aW9u%0AQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--23726c9030d388050ded485ad8a0b2cdee5fed59
+  Parameters: {"commit"=>"Atualizar", "grupos"=>["3", "2"], "authenticity_token"=>"0b30967945bf1b2848036164fc013a5477c1035d", "_method"=>"put", "action"=>"update", "id"=>"198", "controller"=>"ti/usuarios", "usuario"=>{"password_confirmation"=>"", "password"=>"", "email"=>"gedilsonps@redesat-to.com.br", "active"=>"false"}}
+  [4;36;1mSQL (0.016000)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'usuarios'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mUsuario Load (0.031000)[0m   [0mSELECT * FROM usuarios WHERE (usuarios."id" = 1) LIMIT 1[0m
+  [4;36;1mGrupo Load (0.016000)[0m   [0;1mSELECT grupos.* FROM grupos INNER JOIN grupo_usuarios ON grupos.id = grupo_usuarios.grupo_id WHERE ((grupo_usuarios.usuario_id = 1)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'grupos'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mPermissao Load (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 3)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'permissoes'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mPermissao Load (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 2)) [0m
+  [4;35;1mPermissao Load (0.016000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 1)) [0m
+  [4;36;1mPermissao Load (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 4)) [0m
+  [4;35;1mGrupo Load (0.015000)[0m   [0mSELECT * FROM grupos [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 3)) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 2)) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 1)) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 4)) [0m
+  [4;36;1mUsuario Load (0.000000)[0m   [0;1mSELECT * FROM usuarios WHERE (usuarios."id" = 198) [0m
+WARNING: Can't mass-assign these protected attributes: active
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mUsuario Load (0.000000)[0m   [0;1mSELECT * FROM usuarios WHERE (LOWER(usuarios.login) = E'gedilsonps' AND usuarios.id <> 198) LIMIT 1[0m
+  [4;35;1mUsuario Load (0.000000)[0m   [0mSELECT * FROM usuarios WHERE (LOWER(usuarios.email) = E'gedilsonps@redesat-to.com.br' AND usuarios.id <> 198) LIMIT 1[0m
+  [4;36;1mUsuario Update (0.000000)[0m   [0;1mUPDATE usuarios SET "created_at" = '2008-06-08 03:35:37.257782', "nome" = E'Gedilson Pessoa da Silva', "email" = E'gedilsonps@redesat-to.com.br', "remember_token" = NULL, "active" = 't', "login" = E'gedilsonps', "remember_token_expires_at" = NULL, "crypted_password" = E'$1$EiwjdVNz$kHE89.WbJk5eHn07LNMvK0', "updated_at" = '2008-06-16 12:54:49.156000', "salt" = NULL WHERE "id" = 198[0m
+Expired fragment: menu_usuario_198 (0.00000)
+  [4;35;1mSQL (0.000000)[0m   [0mCOMMIT[0m
+  [4;36;1mGrupoUsuario Load (0.016000)[0m   [0;1mSELECT * FROM grupo_usuarios WHERE (grupo_usuarios.usuario_id = 198) [0m
+  [4;35;1mSQL (0.000000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'grupo_usuarios'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+Redirected to http://localhost:3000/ti/usuarios/198
+Completed in 0.31300 (3 reqs/sec) | DB: 0.15800 (50%) | 302 Found [http://localhost/ti/usuarios/198]
+
+
+Processing UsuariosController#show (for 127.0.0.1 at 2008-06-16 12:54:49) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMGU5ZTI3ZjA1ODdiMmExZDUxYTkxOWViMzg4YTAz%0ANjI6D3VzdWFyaW9faWRpBiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6%0ARmxhc2g6OkZsYXNoSGFzaHsGOgtub3RpY2UiJVJlZ2lzdHJvIGF0dWFsaXph%0AZG8gY29tIHN1Y2Vzc28hBjoKQHVzZWR7BjsIVDoOcmV0dXJuX3RvMA%3D%3D--56a1593ed01bfaaaece0adb693feb70677ac9ec8
+  Parameters: {"action"=>"show", "id"=>"198", "controller"=>"ti/usuarios"}
+  [4;36;1mSQL (0.219000)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'usuarios'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mUsuario Load (0.015000)[0m   [0mSELECT * FROM usuarios WHERE (usuarios."id" = 1) LIMIT 1[0m
+  [4;36;1mGrupo Load (0.000000)[0m   [0;1mSELECT grupos.* FROM grupos INNER JOIN grupo_usuarios ON grupos.id = grupo_usuarios.grupo_id WHERE ((grupo_usuarios.usuario_id = 1)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'grupos'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mPermissao Load (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 3)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'permissoes'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mPermissao Load (0.015000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 2)) [0m
+  [4;35;1mPermissao Load (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 1)) [0m
+  [4;36;1mPermissao Load (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 4)) [0m
+  [4;35;1mGrupo Load (0.000000)[0m   [0mSELECT * FROM grupos [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 3)) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 2)) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 1)) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 4)) [0m
+  [4;36;1mUsuario Load (0.000000)[0m   [0;1mSELECT * FROM usuarios WHERE (usuarios."id" = 198) [0m
+Rendering template within layouts/application
+Rendering ti/usuarios/show
+  [4;35;1mGrupo Load (0.000000)[0m   [0mSELECT grupos.* FROM grupos INNER JOIN grupo_usuarios ON grupos.id = grupo_usuarios.grupo_id WHERE ((grupo_usuarios.usuario_id = 198)) [0m
+Fragment read: menu_usuario_1 (0.00000)
+Completed in 0.53200 (1 reqs/sec) | Rendering: 0.06300 (11%) | DB: 0.24900 (46%) | 200 OK [http://localhost/ti/usuarios/198]
+
+
+Processing JavascriptsController#dragdrop (for 127.0.0.1 at 2008-06-16 12:54:50) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMGU5ZTI3ZjA1ODdiMmExZDUxYTkxOWViMzg4YTAz%0ANjI6D3VzdWFyaW9faWRpBjoOcmV0dXJuX3RvMCIKZmxhc2hJQzonQWN0aW9u%0AQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--23726c9030d388050ded485ad8a0b2cdee5fed59
+  Parameters: {"format"=>"js", "action"=>"dragdrop", "controller"=>"javascripts"}
+  [4;36;1mSQL (0.031000)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'usuarios'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mUsuario Load (0.015000)[0m   [0mSELECT * FROM usuarios WHERE (usuarios."id" = 1) LIMIT 1[0m
+  [4;36;1mGrupo Load (0.015000)[0m   [0;1mSELECT grupos.* FROM grupos INNER JOIN grupo_usuarios ON grupos.id = grupo_usuarios.grupo_id WHERE ((grupo_usuarios.usuario_id = 1)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'grupos'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mPermissao Load (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 3)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'permissoes'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mPermissao Load (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 2)) [0m
+  [4;35;1mPermissao Load (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 1)) [0m
+  [4;36;1mPermissao Load (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 4)) [0m
+
+
+ActionController::UnknownAction (No action responded to dragdrop):
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing JavascriptsController#controls (for 127.0.0.1 at 2008-06-16 12:54:51) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMGU5ZTI3ZjA1ODdiMmExZDUxYTkxOWViMzg4YTAz%0ANjI6D3VzdWFyaW9faWRpBiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6%0ARmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoOcmV0dXJuX3RvMA%3D%3D--9e423d742394db2b59c0edeb6438825f14995e8d
+  Parameters: {"format"=>"js", "action"=>"controls", "controller"=>"javascripts"}
+  [4;35;1mSQL (0.031000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'usuarios'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mUsuario Load (0.000000)[0m   [0;1mSELECT * FROM usuarios WHERE (usuarios."id" = 1) LIMIT 1[0m
+  [4;35;1mGrupo Load (0.000000)[0m   [0mSELECT grupos.* FROM grupos INNER JOIN grupo_usuarios ON grupos.id = grupo_usuarios.grupo_id WHERE ((grupo_usuarios.usuario_id = 1)) [0m
+  [4;36;1mSQL (0.031000)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'grupos'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mPermissao Load (0.015000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 3)) [0m
+  [4;36;1mSQL (0.016000)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'permissoes'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mPermissao Load (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 2)) [0m
+  [4;36;1mPermissao Load (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 1)) [0m
+  [4;35;1mPermissao Load (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 4)) [0m
+
+
+ActionController::UnknownAction (No action responded to controls):
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing UsuariosController#index (for 127.0.0.1 at 2008-06-16 12:54:57) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMGU5ZTI3ZjA1ODdiMmExZDUxYTkxOWViMzg4YTAz%0ANjI6D3VzdWFyaW9faWRpBjoOcmV0dXJuX3RvMCIKZmxhc2hJQzonQWN0aW9u%0AQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--23726c9030d388050ded485ad8a0b2cdee5fed59
+  Parameters: {"action"=>"index", "controller"=>"ti/usuarios"}
+  [4;36;1mSQL (0.015000)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'usuarios'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mUsuario Load (0.016000)[0m   [0mSELECT * FROM usuarios WHERE (usuarios."id" = 1) LIMIT 1[0m
+  [4;36;1mGrupo Load (0.016000)[0m   [0;1mSELECT grupos.* FROM grupos INNER JOIN grupo_usuarios ON grupos.id = grupo_usuarios.grupo_id WHERE ((grupo_usuarios.usuario_id = 1)) [0m
+  [4;35;1mSQL (0.015000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'grupos'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mPermissao Load (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 3)) [0m
+  [4;35;1mSQL (0.015000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'permissoes'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mPermissao Load (0.016000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 2)) [0m
+  [4;35;1mPermissao Load (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 1)) [0m
+  [4;36;1mPermissao Load (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 4)) [0m
+  [4;35;1mUsuario Load (0.047000)[0m   [0mSELECT * FROM usuarios ORDER BY usuarios.login LIMIT 16 OFFSET 0[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM usuarios [0m
+Rendering template within layouts/application
+Rendering ti/usuarios/index
+Rendered ti/usuarios/_search (0.00000)
+Fragment read: menu_usuario_1 (0.03100)
+Completed in 0.32800 (3 reqs/sec) | Rendering: 0.10900 (33%) | DB: 0.29400 (89%) | 200 OK [http://localhost/ti/usuarios]
+
+
+Processing JavascriptsController#dragdrop (for 127.0.0.1 at 2008-06-16 12:54:58) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMGU5ZTI3ZjA1ODdiMmExZDUxYTkxOWViMzg4YTAz%0ANjI6D3VzdWFyaW9faWRpBiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6%0ARmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoOcmV0dXJuX3RvMA%3D%3D--9e423d742394db2b59c0edeb6438825f14995e8d
+  Parameters: {"format"=>"js", "action"=>"dragdrop", "controller"=>"javascripts"}
+  [4;35;1mSQL (0.016000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'usuarios'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mUsuario Load (0.000000)[0m   [0;1mSELECT * FROM usuarios WHERE (usuarios."id" = 1) LIMIT 1[0m
+  [4;35;1mGrupo Load (0.016000)[0m   [0mSELECT grupos.* FROM grupos INNER JOIN grupo_usuarios ON grupos.id = grupo_usuarios.grupo_id WHERE ((grupo_usuarios.usuario_id = 1)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'grupos'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mPermissao Load (0.016000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 3)) [0m
+  [4;36;1mSQL (0.016000)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'permissoes'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mPermissao Load (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 2)) [0m
+  [4;36;1mPermissao Load (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 1)) [0m
+  [4;35;1mPermissao Load (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 4)) [0m
+
+
+ActionController::UnknownAction (No action responded to dragdrop):
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing JavascriptsController#controls (for 127.0.0.1 at 2008-06-16 12:54:59) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMGU5ZTI3ZjA1ODdiMmExZDUxYTkxOWViMzg4YTAz%0ANjI6D3VzdWFyaW9faWRpBjoOcmV0dXJuX3RvMCIKZmxhc2hJQzonQWN0aW9u%0AQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--23726c9030d388050ded485ad8a0b2cdee5fed59
+  Parameters: {"format"=>"js", "action"=>"controls", "controller"=>"javascripts"}
+  [4;36;1mSQL (0.047000)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'usuarios'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mUsuario Load (0.015000)[0m   [0mSELECT * FROM usuarios WHERE (usuarios."id" = 1) LIMIT 1[0m
+  [4;36;1mGrupo Load (0.000000)[0m   [0;1mSELECT grupos.* FROM grupos INNER JOIN grupo_usuarios ON grupos.id = grupo_usuarios.grupo_id WHERE ((grupo_usuarios.usuario_id = 1)) [0m
+  [4;35;1mSQL (0.015000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'grupos'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mPermissao Load (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 3)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'permissoes'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mPermissao Load (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 2)) [0m
+  [4;35;1mPermissao Load (0.016000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 1)) [0m
+  [4;36;1mPermissao Load (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 4)) [0m
+
+
+ActionController::UnknownAction (No action responded to controls):
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing UsuariosController#edit (for 127.0.0.1 at 2008-06-16 12:55:02) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMGU5ZTI3ZjA1ODdiMmExZDUxYTkxOWViMzg4YTAz%0ANjI6D3VzdWFyaW9faWRpBiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6%0ARmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoOcmV0dXJuX3RvMA%3D%3D--9e423d742394db2b59c0edeb6438825f14995e8d
+  Parameters: {"action"=>"edit", "id"=>"198", "controller"=>"ti/usuarios"}
+  [4;35;1mSQL (0.016000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'usuarios'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mUsuario Load (0.016000)[0m   [0;1mSELECT * FROM usuarios WHERE (usuarios."id" = 1) LIMIT 1[0m
+  [4;35;1mGrupo Load (0.000000)[0m   [0mSELECT grupos.* FROM grupos INNER JOIN grupo_usuarios ON grupos.id = grupo_usuarios.grupo_id WHERE ((grupo_usuarios.usuario_id = 1)) [0m
+  [4;36;1mSQL (0.016000)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'grupos'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mPermissao Load (0.016000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 3)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'permissoes'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mPermissao Load (0.015000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 2)) [0m
+  [4;36;1mPermissao Load (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 1)) [0m
+  [4;35;1mPermissao Load (0.016000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 4)) [0m
+  [4;36;1mGrupo Load (0.000000)[0m   [0;1mSELECT * FROM grupos [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 3)) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 2)) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 1)) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 4)) [0m
+  [4;35;1mUsuario Load (0.015000)[0m   [0mSELECT * FROM usuarios WHERE (usuarios."id" = 198) [0m
+Rendering template within layouts/application
+Rendering ti/usuarios/edit
+  [4;36;1mGrupo Load (0.000000)[0m   [0;1mSELECT grupos.* FROM grupos INNER JOIN grupo_usuarios ON grupos.id = grupo_usuarios.grupo_id WHERE ((grupo_usuarios.usuario_id = 198)) [0m
+Rendered ti/usuarios/_form (0.01600)
+Fragment read: menu_usuario_1 (0.00000)
+Completed in 0.29700 (3 reqs/sec) | Rendering: 0.04700 (15%) | DB: 0.26700 (89%) | 200 OK [http://localhost/ti/usuarios/198/edit]
+
+
+Processing JavascriptsController#dragdrop (for 127.0.0.1 at 2008-06-16 12:55:03) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMGU5ZTI3ZjA1ODdiMmExZDUxYTkxOWViMzg4YTAz%0ANjI6D3VzdWFyaW9faWRpBjoOcmV0dXJuX3RvMCIKZmxhc2hJQzonQWN0aW9u%0AQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--23726c9030d388050ded485ad8a0b2cdee5fed59
+  Parameters: {"format"=>"js", "action"=>"dragdrop", "controller"=>"javascripts"}
+  [4;35;1mSQL (0.016000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'usuarios'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mUsuario Load (0.016000)[0m   [0;1mSELECT * FROM usuarios WHERE (usuarios."id" = 1) LIMIT 1[0m
+  [4;35;1mGrupo Load (0.000000)[0m   [0mSELECT grupos.* FROM grupos INNER JOIN grupo_usuarios ON grupos.id = grupo_usuarios.grupo_id WHERE ((grupo_usuarios.usuario_id = 1)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'grupos'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mPermissao Load (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 3)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'permissoes'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mPermissao Load (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 2)) [0m
+  [4;36;1mPermissao Load (0.015000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 1)) [0m
+  [4;35;1mPermissao Load (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 4)) [0m
+
+
+ActionController::UnknownAction (No action responded to dragdrop):
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing JavascriptsController#controls (for 127.0.0.1 at 2008-06-16 12:55:04) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMGU5ZTI3ZjA1ODdiMmExZDUxYTkxOWViMzg4YTAz%0ANjI6D3VzdWFyaW9faWRpBiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6%0ARmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoOcmV0dXJuX3RvMA%3D%3D--9e423d742394db2b59c0edeb6438825f14995e8d
+  Parameters: {"format"=>"js", "action"=>"controls", "controller"=>"javascripts"}
+  [4;36;1mSQL (0.015000)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'usuarios'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mUsuario Load (0.031000)[0m   [0mSELECT * FROM usuarios WHERE (usuarios."id" = 1) LIMIT 1[0m
+  [4;36;1mGrupo Load (0.015000)[0m   [0;1mSELECT grupos.* FROM grupos INNER JOIN grupo_usuarios ON grupos.id = grupo_usuarios.grupo_id WHERE ((grupo_usuarios.usuario_id = 1)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'grupos'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mPermissao Load (0.015000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 3)) [0m
+  [4;35;1mSQL (0.031000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'permissoes'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mPermissao Load (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 2)) [0m
+  [4;35;1mPermissao Load (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 1)) [0m
+  [4;36;1mPermissao Load (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 4)) [0m
+
+
+ActionController::UnknownAction (No action responded to controls):
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing UsuariosController#update (for 127.0.0.1 at 2008-06-16 12:55:10) [PUT]
+  Session ID: BAh7CToMY3NyZl9pZCIlMGU5ZTI3ZjA1ODdiMmExZDUxYTkxOWViMzg4YTAz%0ANjI6D3VzdWFyaW9faWRpBjoOcmV0dXJuX3RvMCIKZmxhc2hJQzonQWN0aW9u%0AQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--23726c9030d388050ded485ad8a0b2cdee5fed59
+  Parameters: {"commit"=>"Atualizar", "grupos"=>["3", "2"], "authenticity_token"=>"0b30967945bf1b2848036164fc013a5477c1035d", "_method"=>"put", "action"=>"update", "id"=>"198", "controller"=>"ti/usuarios", "usuario"=>{"password_confirmation"=>"", "password"=>"", "email"=>"gedilsonps@redesat-to.com.br", "active"=>"1"}}
+  [4;35;1mSQL (0.016000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'usuarios'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mUsuario Load (0.015000)[0m   [0;1mSELECT * FROM usuarios WHERE (usuarios."id" = 1) LIMIT 1[0m
+  [4;35;1mGrupo Load (0.000000)[0m   [0mSELECT grupos.* FROM grupos INNER JOIN grupo_usuarios ON grupos.id = grupo_usuarios.grupo_id WHERE ((grupo_usuarios.usuario_id = 1)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'grupos'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mPermissao Load (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 3)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'permissoes'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mPermissao Load (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 2)) [0m
+  [4;36;1mPermissao Load (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 1)) [0m
+  [4;35;1mPermissao Load (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 4)) [0m
+  [4;36;1mGrupo Load (0.000000)[0m   [0;1mSELECT * FROM grupos [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 3)) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 2)) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 1)) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 4)) [0m
+  [4;35;1mUsuario Load (0.015000)[0m   [0mSELECT * FROM usuarios WHERE (usuarios."id" = 198) [0m
+WARNING: Can't mass-assign these protected attributes: active
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mUsuario Load (0.000000)[0m   [0mSELECT * FROM usuarios WHERE (LOWER(usuarios.login) = E'gedilsonps' AND usuarios.id <> 198) LIMIT 1[0m
+  [4;36;1mUsuario Load (0.000000)[0m   [0;1mSELECT * FROM usuarios WHERE (LOWER(usuarios.email) = E'gedilsonps@redesat-to.com.br' AND usuarios.id <> 198) LIMIT 1[0m
+  [4;35;1mUsuario Update (0.000000)[0m   [0mUPDATE usuarios SET "created_at" = '2008-06-08 03:35:37.257782', "nome" = E'Gedilson Pessoa da Silva', "email" = E'gedilsonps@redesat-to.com.br', "remember_token" = NULL, "active" = 't', "login" = E'gedilsonps', "remember_token_expires_at" = NULL, "crypted_password" = E'$1$EiwjdVNz$kHE89.WbJk5eHn07LNMvK0', "updated_at" = '2008-06-16 12:55:10.609000', "salt" = NULL WHERE "id" = 198[0m
+Expired fragment: menu_usuario_198 (0.00000)
+  [4;36;1mSQL (0.000000)[0m   [0;1mCOMMIT[0m
+  [4;35;1mGrupoUsuario Load (0.000000)[0m   [0mSELECT * FROM grupo_usuarios WHERE (grupo_usuarios.usuario_id = 198) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'grupo_usuarios'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+Redirected to http://localhost:3000/ti/usuarios/198
+Completed in 0.29700 (3 reqs/sec) | DB: 0.20000 (67%) | 302 Found [http://localhost/ti/usuarios/198]
+
+
+Processing UsuariosController#show (for 127.0.0.1 at 2008-06-16 12:55:11) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMGU5ZTI3ZjA1ODdiMmExZDUxYTkxOWViMzg4YTAz%0ANjI6D3VzdWFyaW9faWRpBiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6%0ARmxhc2g6OkZsYXNoSGFzaHsGOgtub3RpY2UiJVJlZ2lzdHJvIGF0dWFsaXph%0AZG8gY29tIHN1Y2Vzc28hBjoKQHVzZWR7BjsIVDoOcmV0dXJuX3RvMA%3D%3D--56a1593ed01bfaaaece0adb693feb70677ac9ec8
+  Parameters: {"action"=>"show", "id"=>"198", "controller"=>"ti/usuarios"}
+  [4;35;1mSQL (0.016000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'usuarios'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mUsuario Load (0.000000)[0m   [0;1mSELECT * FROM usuarios WHERE (usuarios."id" = 1) LIMIT 1[0m
+  [4;35;1mGrupo Load (0.000000)[0m   [0mSELECT grupos.* FROM grupos INNER JOIN grupo_usuarios ON grupos.id = grupo_usuarios.grupo_id WHERE ((grupo_usuarios.usuario_id = 1)) [0m
+  [4;36;1mSQL (0.016000)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'grupos'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mPermissao Load (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 3)) [0m
+  [4;36;1mSQL (0.032000)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'permissoes'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mPermissao Load (0.015000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 2)) [0m
+  [4;36;1mPermissao Load (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 1)) [0m
+  [4;35;1mPermissao Load (0.016000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 4)) [0m
+  [4;36;1mGrupo Load (0.000000)[0m   [0;1mSELECT * FROM grupos [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 3)) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 2)) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 1)) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 4)) [0m
+  [4;35;1mUsuario Load (0.000000)[0m   [0mSELECT * FROM usuarios WHERE (usuarios."id" = 198) [0m
+Rendering template within layouts/application
+Rendering ti/usuarios/show
+  [4;36;1mGrupo Load (0.000000)[0m   [0;1mSELECT grupos.* FROM grupos INNER JOIN grupo_usuarios ON grupos.id = grupo_usuarios.grupo_id WHERE ((grupo_usuarios.usuario_id = 198)) [0m
+Fragment read: menu_usuario_1 (0.00000)
+Completed in 0.26600 (3 reqs/sec) | Rendering: 0.04700 (17%) | DB: 0.09500 (35%) | 200 OK [http://localhost/ti/usuarios/198]
+
+
+Processing JavascriptsController#dragdrop (for 127.0.0.1 at 2008-06-16 12:55:12) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMGU5ZTI3ZjA1ODdiMmExZDUxYTkxOWViMzg4YTAz%0ANjI6D3VzdWFyaW9faWRpBjoOcmV0dXJuX3RvMCIKZmxhc2hJQzonQWN0aW9u%0AQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--23726c9030d388050ded485ad8a0b2cdee5fed59
+  Parameters: {"format"=>"js", "action"=>"dragdrop", "controller"=>"javascripts"}
+  [4;35;1mSQL (0.015000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'usuarios'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mUsuario Load (0.000000)[0m   [0;1mSELECT * FROM usuarios WHERE (usuarios."id" = 1) LIMIT 1[0m
+  [4;35;1mGrupo Load (0.000000)[0m   [0mSELECT grupos.* FROM grupos INNER JOIN grupo_usuarios ON grupos.id = grupo_usuarios.grupo_id WHERE ((grupo_usuarios.usuario_id = 1)) [0m
+  [4;36;1mSQL (0.015000)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'grupos'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mPermissao Load (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 3)) [0m
+  [4;36;1mSQL (0.015000)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'permissoes'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mPermissao Load (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 2)) [0m
+  [4;36;1mPermissao Load (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 1)) [0m
+  [4;35;1mPermissao Load (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 4)) [0m
+
+
+ActionController::UnknownAction (No action responded to dragdrop):
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing JavascriptsController#controls (for 127.0.0.1 at 2008-06-16 12:55:12) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMGU5ZTI3ZjA1ODdiMmExZDUxYTkxOWViMzg4YTAz%0ANjI6D3VzdWFyaW9faWRpBiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6%0ARmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoOcmV0dXJuX3RvMA%3D%3D--9e423d742394db2b59c0edeb6438825f14995e8d
+  Parameters: {"format"=>"js", "action"=>"controls", "controller"=>"javascripts"}
+  [4;36;1mSQL (0.000000)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'usuarios'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mUsuario Load (0.016000)[0m   [0mSELECT * FROM usuarios WHERE (usuarios."id" = 1) LIMIT 1[0m
+  [4;36;1mGrupo Load (0.000000)[0m   [0;1mSELECT grupos.* FROM grupos INNER JOIN grupo_usuarios ON grupos.id = grupo_usuarios.grupo_id WHERE ((grupo_usuarios.usuario_id = 1)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'grupos'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mPermissao Load (0.015000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 3)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'permissoes'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mPermissao Load (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 2)) [0m
+  [4;35;1mPermissao Load (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 1)) [0m
+  [4;36;1mPermissao Load (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 4)) [0m
+
+
+ActionController::UnknownAction (No action responded to controls):
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing UsuariosController#edit (for 127.0.0.1 at 2008-06-16 13:16:03) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMGU5ZTI3ZjA1ODdiMmExZDUxYTkxOWViMzg4YTAz%0ANjI6D3VzdWFyaW9faWRpBjoOcmV0dXJuX3RvMCIKZmxhc2hJQzonQWN0aW9u%0AQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--23726c9030d388050ded485ad8a0b2cdee5fed59
+  Parameters: {"action"=>"edit", "id"=>"198", "controller"=>"ti/usuarios"}
+  [4;35;1mSQL (0.000000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'usuarios'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mUsuario Load (0.000000)[0m   [0;1mSELECT * FROM usuarios WHERE (usuarios."id" = 1) LIMIT 1[0m
+  [4;35;1mGrupo Load (0.016000)[0m   [0mSELECT grupos.* FROM grupos INNER JOIN grupo_usuarios ON grupos.id = grupo_usuarios.grupo_id WHERE ((grupo_usuarios.usuario_id = 1)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'grupos'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mPermissao Load (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 3)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'permissoes'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mPermissao Load (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 2)) [0m
+  [4;36;1mPermissao Load (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 1)) [0m
+  [4;35;1mPermissao Load (0.016000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 4)) [0m
+  [4;36;1mGrupo Load (0.015000)[0m   [0;1mSELECT * FROM grupos [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 3)) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 2)) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 1)) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 4)) [0m
+  [4;35;1mUsuario Load (0.000000)[0m   [0mSELECT * FROM usuarios WHERE (usuarios."id" = 198) [0m
+Rendering template within layouts/application
+Rendering ti/usuarios/edit
+  [4;36;1mGrupo Load (0.000000)[0m   [0;1mSELECT grupos.* FROM grupos INNER JOIN grupo_usuarios ON grupos.id = grupo_usuarios.grupo_id WHERE ((grupo_usuarios.usuario_id = 198)) [0m
+Rendered ti/usuarios/_form (0.01600)
+Fragment read: menu_usuario_1 (0.00000)
+Completed in 0.25000 (4 reqs/sec) | Rendering: 0.04600 (18%) | DB: 0.12300 (49%) | 200 OK [http://localhost/ti/usuarios/198/edit]
+
+
+Processing JavascriptsController#dragdrop (for 127.0.0.1 at 2008-06-16 13:16:04) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMGU5ZTI3ZjA1ODdiMmExZDUxYTkxOWViMzg4YTAz%0ANjI6D3VzdWFyaW9faWRpBiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6%0ARmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoOcmV0dXJuX3RvMA%3D%3D--9e423d742394db2b59c0edeb6438825f14995e8d
+  Parameters: {"format"=>"js", "action"=>"dragdrop", "controller"=>"javascripts"}
+  [4;35;1mSQL (0.031000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'usuarios'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mUsuario Load (0.016000)[0m   [0;1mSELECT * FROM usuarios WHERE (usuarios."id" = 1) LIMIT 1[0m
+  [4;35;1mGrupo Load (0.000000)[0m   [0mSELECT grupos.* FROM grupos INNER JOIN grupo_usuarios ON grupos.id = grupo_usuarios.grupo_id WHERE ((grupo_usuarios.usuario_id = 1)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'grupos'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mPermissao Load (0.016000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 3)) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'permissoes'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mPermissao Load (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 2)) [0m
+  [4;36;1mPermissao Load (0.016000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 1)) [0m
+  [4;35;1mPermissao Load (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 4)) [0m
+
+
+ActionController::UnknownAction (No action responded to dragdrop):
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing JavascriptsController#controls (for 127.0.0.1 at 2008-06-16 13:16:05) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMGU5ZTI3ZjA1ODdiMmExZDUxYTkxOWViMzg4YTAz%0ANjI6D3VzdWFyaW9faWRpBjoOcmV0dXJuX3RvMCIKZmxhc2hJQzonQWN0aW9u%0AQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--23726c9030d388050ded485ad8a0b2cdee5fed59
+  Parameters: {"format"=>"js", "action"=>"controls", "controller"=>"javascripts"}
+  [4;36;1mSQL (0.000000)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'usuarios'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mUsuario Load (0.015000)[0m   [0mSELECT * FROM usuarios WHERE (usuarios."id" = 1) LIMIT 1[0m
+  [4;36;1mGrupo Load (0.015000)[0m   [0;1mSELECT grupos.* FROM grupos INNER JOIN grupo_usuarios ON grupos.id = grupo_usuarios.grupo_id WHERE ((grupo_usuarios.usuario_id = 1)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'grupos'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mPermissao Load (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 3)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'permissoes'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mPermissao Load (0.000000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 2)) [0m
+  [4;35;1mPermissao Load (0.000000)[0m   [0mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 1)) [0m
+  [4;36;1mPermissao Load (0.016000)[0m   [0;1mSELECT permissoes.* FROM permissoes INNER JOIN grupo_permissoes ON permissoes.id = grupo_permissoes.permissao_id WHERE ((grupo_permissoes.grupo_id = 4)) [0m
+
+
+ActionController::UnknownAction (No action responded to controls):
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-06-16 16:05:36) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMGU5ZTI3ZjA1ODdiMmExZDUxYTkxOWViMzg4YTAz%0ANjI6D3VzdWFyaW9faWRpBiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6%0ARmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoOcmV0dXJuX3RvMA%3D%3D--9e423d742394db2b59c0edeb6438825f14995e8d
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/googlemaps" with {:method=>:get}):
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1441:in `recognize_path'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1424:in `recognize'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-06-16 16:05:46) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMGU5ZTI3ZjA1ODdiMmExZDUxYTkxOWViMzg4YTAz%0ANjI6D3VzdWFyaW9faWRpBjoOcmV0dXJuX3RvMCIKZmxhc2hJQzonQWN0aW9u%0AQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--23726c9030d388050ded485ad8a0b2cdee5fed59
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/googlemap" with {:method=>:get}):
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1441:in `recognize_path'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1424:in `recognize'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)

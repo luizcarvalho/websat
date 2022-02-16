@@ -1,0 +1,2 @@
+module Ti::PermissoesHelper
+end

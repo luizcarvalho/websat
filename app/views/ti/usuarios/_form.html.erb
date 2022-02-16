@@ -1,0 +1,28 @@
+<p>
+  <label for="usuario_login">Login:</label><br/>
+  <%= f.text_field :login, { :disabled => !@usuario.new_record? }  %>
+</p>
+<p>
+  <label for="usuario_email">E-mail:</label><br/>
+  <%= f.text_field :email %>
+</p>
+<p>
+  <label for="usuario_password">Senha:</label><br/>
+  <%= f.text_field :password %>
+</p>
+<p>
+  <label for="usuario_password_confirmation">Redigite a Senha:</label><br/>
+  <%= f.text_field :password_confirmation %>
+</p>
+<p>
+  <label for="usuario_active">Situação:</label><br/>
+  <%= f.text_field :active %>
+</p>
+<p>
+  <label for="usuario_grupos">Grupos:</label>
+  <div class="groups">
+    <% @grupos.each do |grupo| %>
+      <%= check_box_tag "grupos[]", grupo.id, @usuario.grupos.include?(grupo) %> <%= grupo.nome %> <br />
+    <% end %>
+  </div>
+</p>

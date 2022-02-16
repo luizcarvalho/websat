@@ -1,0 +1,32 @@
+<h1><%=h labels('details') %></h1>
+
+<p>
+  <strong>Label:</strong><%=h @menu.label %>
+</p>
+<p>
+  <strong>Url:</strong><%=h @menu.url %>
+</p>
+<p>
+  <strong>Ordem:</strong><%=h @menu.ordem %>
+</p>
+
+<%if(@menu.pai.nil?) then %>
+  <p>
+    <strong>Filhos:</strong>
+  </p>  
+  <p>
+  <% @menu.menu_filhos.each do |filho| %>
+   <%= link_to filho.label,object_url(filho) %><br>
+  
+  <% end %>
+</p>
+<% else %>
+    <p><strong>Pai:</strong>
+      <%= link_to @menu.menu_pai.label, object_url(@menu.menu_pai) %>
+    </p>
+
+<%  end %>
+
+<%= link_to labels('edit'), edit_object_url %>
+|
+<%= link_to labels('back'), collection_url %>

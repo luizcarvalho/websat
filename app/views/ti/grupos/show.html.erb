@@ -1,0 +1,18 @@
+<h1><%=h labels('details') %></h1>
+
+<p>
+  <strong>Nome:</strong><%=h @grupo.nome %>
+</p>
+<p>
+  <strong>Descrição:</strong><%=h @grupo.descricao %>
+</p>
+<p>
+  <strong><%= link_to labels('permission'),ti_grupo_permissoes_url(object) %></strong>  
+</p>
+<p>
+  <strong><%= link_to labels('users'),ti_grupo_usuarios_url(object) %></strong>  
+</p>
+
+<%= link_to labels('edit'), edit_object_url %>
+|
+<%= link_to labels('back'), collection_url %>

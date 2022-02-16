@@ -1,0 +1,18 @@
+<h1><%=h labels('details') %></h1>
+
+<p>
+  <strong>Endereço:</strong><%=h @alias.address %>
+</p>
+<p>
+  <strong>Para:</strong><%=h @alias.goto %>
+</p>
+<p>
+  <strong>Domínio:</strong><%=h @alias.dominio %>
+</p>
+<p>
+  <strong>Situação:</strong><%=h situacao(@alias.active) %>
+</p>
+
+<%= link_to labels('edit'), edit_object_url %>
+|
+<%= link_to labels('back'), collection_url %>

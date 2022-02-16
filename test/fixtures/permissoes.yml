@@ -1,0 +1,8 @@
+one:
+  id: 1
+  nome: MyString
+  recurso: MyString
+two:
+  id: 2
+  nome: MyString
+  recurso: MyString

@@ -1,0 +1,2 @@
+module Ti::MailboxesHelper
+end

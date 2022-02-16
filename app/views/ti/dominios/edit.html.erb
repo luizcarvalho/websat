@@ -1,0 +1,14 @@
+<h1><%=h labels('changing') + " " + labels('registration') %></h1>
+
+<%= error_messages_for :dominio %>
+
+<% form_for(:dominio, :url => object_url, :html => { :method => :put }) do |f| %>
+  <%= render :partial => "form", :locals => { :f => f } %>
+  <p>
+    <%=submit_tag labels('update') %>
+  </p>
+<% end %>
+
+<%= link_to labels('show'), object_url %>
+|
+<%= link_to labels('back'), collection_url %>

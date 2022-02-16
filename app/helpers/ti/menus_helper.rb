@@ -1,0 +1,2 @@
+module Ti::MenusHelper
+end

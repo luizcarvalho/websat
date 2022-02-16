@@ -1,0 +1,11 @@
+# Logfile created on Thu Jun 05 12:02:39 -0300 2008 by /
+NET::SSH (rm - r /postfix/teste.redesat-to.com.br/lucas1//): rm: cannot remove `/postfix/teste.redesat-to.com.br/lucas1//': No such file or directory
+
+NET::SSH (rm - r /postfix/teste.redesat-to.com.br/admin//): rm: cannot remove `/postfix/teste.redesat-to.com.br/admin//': No such file or directory
+
+NET::SSH (maildirmake)- maildirmake: /postfix/teste.redesat-to.com.br/admin//Maildir: File exists
+
+NET::SSH (maildirmake)- maildirmake: /postfix/teste.redesat-to.com.br/admin//Maildir: File exists
+
+NET::SSH (maildirmake)- maildirmake: /postfix/teste.redesat-to.com.br/admin//Maildir: File exists
+

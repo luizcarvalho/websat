@@ -1,0 +1,8 @@
+one:
+  id: 1
+  nome: MyString
+  descricao: MyText
+two:
+  id: 2
+  nome: MyString
+  descricao: MyText

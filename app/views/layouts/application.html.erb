@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>.:: WebSat ::.</title>
+    <%= stylesheet_link_tag "mainbox" %>
+    <%= stylesheet_link_tag "menu" %>
+    <%=  javascript_include_tag :defaults   %>
+    <%= yield(:head) %>
+  </head>
+  <body id="admin">
+    <div id="mainbox"><!--MAINBOX INICIO - Bloco principal  ############################################### -->
+      <div id="header"><!--HEADER INICIO - Bloco de cabeçalho  ############################################### -->        
+        <div id="logo"><!--LOGO INICIO ############################################### -->
+<%= image_tag 'logo.png', :id => 'logo', :width => 182, :height => 57 %>        
+        </div><!-- LOGO  FIM  ############################################### -->
+      </div><!--HEADER FIM #################### -->
+      
+      <div id="columns"><!--COLUMNS INICIO ########################################################## -->
+<% if logged_in?  %>
+          <div id="colmenu"><!--COLMENU INICIO ############################################### -->
+  <% cache "menu_usuario_#{current_usuario.id}" do %>
+            <ul  id="navmenu-h">
+              <% current_usuario.build_menu.each do |menupai|%>
+                <li><%= link_to menupai[:label], "#{@contextroot}/#{menupai[:url]}"%>
+                  <ul>
+                    <% menupai[:filhos].each do |menufilho|  %> 
+                      <li><%= link_to menufilho[:label], "#{@contextroot}/#{menufilho[:url]}" %></li>
+                    <% end %>
+                  </ul>
+                </li>
+              <% end %>                                                                                                                                                                                                                                   
+            </ul>
+          <% end %>
+        </div><!--COLMENU FIM ############################################### -->
+<% end %>
+
+        <div id="colmenu2"><!--COLMENU2 INICIO--></div><!--COLMENU2 FIM-->    
+        <div id="contents"><!--CONTENTS INICIO ############################################### -->          
+          <div id="colinfo"><!--COLINFO INICIO-->
+          
+            <div id="infolocation"><!--INFOLOCATION INICIO-->
+            </div><!--INFOLOCATION FIM-->
+        
+            <div id="infouser"><!--INFOUSER INICIO ############################################### -->
+
+<% if logged_in?  %>
+    Olá <%= link_to h(current_usuario.login.capitalize), usuario_path(current_usuario) %> |<%= link_to 'Alterar Senha', change_password_url %>|
+<%= link_to 'Sair', logout_url %>
+<% end %>
+
+            </div><!--INFOUSER FIM ############################################### -->
+
+<% if flash[:notice] -%><div id="notice"><%= flash[:notice] %></div>
+<% end -%>
+<% if flash[:error] -%><div id="error"><%= flash[:error] %></div>
+<% end -%>
+
+<%= yield %>
+
+          </div><!--COLINFO FIM-->        
+        </div><!--CONTENTS FIM ################################################################## -->
+      </div> <!--COLUMNS FIM ################################################################## -->
+      
+      <div id="footer"><!--FOOTER INICIO-->      
+        <div id="inforedesat"> <!--INFOREDESAT INICIO-->
+          REDESAT - Instituto de Radiodifusão Educativa - Fone: (063) 2111 9600<br />
+          Av. Teotônio Segurado - 702 Sul Conjunto 01 Lote 02 CEP: 77022-306 Palmas-TO<br />
+          @ Copyright 2008 - Todos direitos reservados - CTI <br />
+        </div> <!--INFOREDESAT FIM-->      
+        <div id="copyright"> <!--COPYRIGHT INICIO-->
+        <%= image_tag 'cti.png', :id => 'logo', :width => 59, :height => 33, :alt =>  "Coordenadoria de tecnologia da infotmação"%><BR />
+          Coordenadoria de tecnologia da informação      
+        </div> <!--COPYRIGHT INICIO-->
+      </div> <!--FOOTER FIM-->
+  
+    </div><!--MAINBOX FIM ################################################################## -->
+  </body>
+</html>

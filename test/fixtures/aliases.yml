@@ -1,0 +1,12 @@
+one:
+  id: 1
+  address: MyString
+  goto: MyText
+  domain: 
+  active: false
+two:
+  id: 2
+  address: MyString
+  goto: MyText
+  domain: 
+  active: false

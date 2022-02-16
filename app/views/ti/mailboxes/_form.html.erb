@@ -1,0 +1,16 @@
+<p>
+  <label for="usuario">Usuário: </label><br/>
+  <%= text_field_tag 'usuario', parent_object.login, {:disabled => true} %>
+</p>
+<p>
+  <label for="mailbox_quota">Quota:</label><br/>
+  <%= f.text_field :quota %>
+</p>
+<p>
+  <label for="mailbox_dominio">Domínio:</label><br/>
+  <%= f.collection_select(:dominio_id, Dominio.find(:all), :id, :domain, {}, { :disabled => !@mailbox.new_record? }) %>
+</p>
+<p>
+  <label for="mailbox_active">Situação:</label>
+  <%= f.check_box :active %>
+</p>

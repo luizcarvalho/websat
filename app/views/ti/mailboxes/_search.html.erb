@@ -1,0 +1,15 @@
+<% form_tag(ti_mailboxes_url, :method => :get) do %>
+  <ul>
+    <!--li-->
+      <!--label for="search_usuario">Usuário:</label-->
+      <!--%= text_field_tag "search[usuario]", (params[:search][:usuario] unless params[:search].blank?), :size => 30, :id => 'search_usuario'  %--> 
+    <!--/li-->
+    <li>
+      <label for="search_active">Situação:</label>
+      <%= select('search', 'active', [['Ativo', true], ['Inativo', false]], :selected => (params[:search].blank?) ? true : params[:search][:active]) %>
+    </li>
+    <li>
+      <%= submit_tag 'Localizar' %>
+    </li>  
+  </ul>
+<% end %>

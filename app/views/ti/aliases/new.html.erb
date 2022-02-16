@@ -1,0 +1,12 @@
+<h1><%=h labels('new') + " " + labels('registration') %></h1>
+
+<%= error_messages_for :alias %>
+
+<% form_for(:alias, :url => collection_url) do |f| %>
+  <%= render :partial => "form", :locals => { :f => f } %>
+  <p>
+    <%= submit_tag labels('create') %>
+  </p>
+<% end %>
+
+<%= link_to labels('back'), collection_url %>

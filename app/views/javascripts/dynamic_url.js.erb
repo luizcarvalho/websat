@@ -1,0 +1,31 @@
+// ti/menu/dynamic_citys.js.erb
+var actions = new Array();
+<% for url in @urls -%>
+    actions.push(new Array('<%= url[0] %>', '<%=h "#{url[0]} / #{url[1]}" %>', '<%= "#{url[0]}/#{url[1]}" %>'));
+<% end -%>
+    
+
+function controllerSelected() {
+  controller_id = $('controller_id').getValue();
+  options = $('menu_url').options;
+  options.length = 1;
+  actions.each(function(action) {
+    if (action[0] == controller_id) {
+      options[options.length] = new Option(action[1], action[2]);
+    }
+  });
+  
+  if (options.length == 1) {
+    $('action_field').hide();
+  } else {
+    $('action_field').show();
+  }
+}
+
+document.observe('dom:loaded', function() {
+  $('action_field').hide();
+  controllerSelected();
+  $('controller_id').observe('change', controllerSelected);
+});
+
+

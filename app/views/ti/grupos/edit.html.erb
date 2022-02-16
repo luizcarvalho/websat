@@ -1,0 +1,11 @@
+<h1><%=h labels('changing') + " " + labels('registration') %></h1>
+
+<%= error_messages_for :grupo %>
+
+<% form_for(:grupo, :url => object_url, :html => { :method => :put }) do |f| %>
+  <%= render :partial => "form", :locals => { :f => f , :button_name => labels('update') } %>
+<% end %>
+
+<%= link_to labels('show'), object_url %>
+|
+<%= link_to labels('back'), collection_url %>

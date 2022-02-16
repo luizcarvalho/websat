@@ -1,0 +1,16 @@
+one:
+  id: 1
+  usuario: 
+  maildir: MyString
+  homedir: MyString
+  quota: 1
+  dominio: 
+  active: false
+two:
+  id: 2
+  usuario: 
+  maildir: MyString
+  homedir: MyString
+  quota: 1
+  dominio: 
+  active: false

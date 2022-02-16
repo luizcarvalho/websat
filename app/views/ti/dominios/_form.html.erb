@@ -1,0 +1,32 @@
+<p>
+  <label for="dominio_domain">Domínio:</label><br/>
+  <%= f.text_field :domain %>
+</p>
+<p>
+  <label for="dominio_description">Descrição:</label><br/>
+  <%= f.text_area :description %>
+</p>
+<p>
+  <label for="dominio_maxaliases">Maxaliases:</label><br/>
+  <%= f.text_field :maxaliases %>
+</p>
+<p>
+  <label for="dominio_maxmailboxes">Maxmailboxes:</label><br/>
+  <%= f.text_field :maxmailboxes %>
+</p>
+<p>
+  <label for="dominio_maxquota">Maxquota:</label><br/>
+  <%= f.text_field :maxquota %>
+</p>
+<p>
+  <label for="dominio_transport">Transport:</label><br/>
+  <%= f.text_field :transport %>
+</p>
+<p>
+  <label for="dominio_backupmx">Backupmx:</label>
+  <%= f.check_box :backupmx %>
+</p>
+<p>
+  <label for="dominio_active">Situação:</label>
+  <%= f.check_box :active %>
+</p>

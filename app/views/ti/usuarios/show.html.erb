@@ -1,0 +1,32 @@
+<h1><%=h labels('details') %></h1>
+
+<p>
+  <strong>Login:</strong><%=h @usuario.login %>
+</p>
+<p>
+  <strong>E-mail:</strong><%=h @usuario.email %>
+</p>
+<p>
+  <strong>Situação:</strong><%=h situacao(@usuario.active) %>
+</p>
+
+<p>
+  <strong><%= link_to "Grupos",ti_usuario_grupos_url(object) %></strong>
+</p>
+
+<td>
+  <% unless @usuario.grupos.empty? %>
+    <p>
+      <b>Grupos:</b>
+      <ul>
+        <% @usuario.grupos.each do |g| %>
+          <li> <%=h g.nome  %> </li>
+        <%  end %>
+      </ul>
+    </p>
+  <% end %>
+</td>
+
+<%= link_to labels('edit'), edit_object_url %>
+|
+<%= link_to labels('back'), collection_url %>
